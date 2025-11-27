@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Gamehound</title>
+    <script>
+        const textarea = document.getElementById('txt');
+        textarea.value =localStorage.getItem('text') || '';
+
+        textarea.addEventListener('input', function () {
+            localStorage.setItem('text', this.value);
+        });
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <h1>GAMEHOUND</h1>
+        <h2>Студия по разработке игр с неугасающим энтузиазмом</h2>
+        <nav>
+            <div id="menu">
+                <a href="main.html">главная</a>
+                <a href="aboutUs.html">о нас</a>
+                <a href="projects.html">наши проекты</a>
+                <a href="contacts.html">контакты</a>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <p>Разрабатываем ваши любимые игры!</p>
+        <examples id="examples">
+            <h1>наши игры</h1>
+            <video controls loop autoplay muted src="Hollow Knight_ Silksong - Release Trailer.mp4" width="640"
+                height="360">
+                Ваш браузер не поддерживает видео тег.
+            </video>
+            <h2>саундтреки из наших игр</h2>
+            <audio controls loop autoplay muted src="ゆめにっきLife of Madotsuki - game girl.mp3"></audio>
+        </examples>
+        <inProgress id="inProgress">
+            <h1>Игры в процессе</h1>
+            <p>Half-life 3</p>
+        </inProgress>
+        <news id="news">
+            <h1>новости</h1>
+            <p>6 лет ожидания и silksong наконец вышла!</p>
+        </news>
+        <pertnership id="partnership">
+            <h4>Сотрудничаем с компаниями и ищем новые идеи</h4>
+            </partnership>
+    </main>
+    <footer id="footer">
+        <h3>наши контакты</h3>
+        <p>Телефон: +7 (999) 999-99-99</p>
+        <p>Email: gamehound@gmail.com</p>
+    </footer>
+</body>
+
+</html>

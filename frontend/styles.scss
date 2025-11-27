@@ -1,0 +1,213 @@
+
+$primary-color: #ff5722;
+$secondary-color: #4fc3f7;
+$background-dark: #1a1a2e;
+$background-light: #4c7ecb;
+$text-color: #e6e6e6;
+$card-bg: rgba(30, 30, 46, 0.8);
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin card-style {
+    background: $card-bg;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+@mixin transition($property: all) {
+    transition: $property 0.3s ease;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, $background-dark 0%, $background-light 100%);
+    color: $text-color;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid $primary-color;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    h1 {
+        color: $primary-color;
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba($primary-color, 0.5);
+    }
+
+    h2 {
+        color: $secondary-color;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+}
+
+#menu {
+    @include flex-center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid $secondary-color;
+        border-radius: 5px;
+        @include transition;
+
+        font-weight: 500;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: $background-dark;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba($secondary-color, 0.4);
+        }
+    }
+}
+
+#main {
+    flex: 1;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    > p {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: $secondary-color;
+    }
+}
+
+%section-heading {
+    color: $primary-color;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 8px;
+    font-size: 1.8rem;
+}
+
+#examples, #inProgress, #news {
+    h1 {
+        @extend %section-heading;
+    }
+}
+
+#examples {
+    h2 {
+        color: $primary-color;
+        margin: 20px 0 10px;
+        font-size: 1.4rem;
+    }
+}
+
+#partnership {
+    h4 {
+        color: $secondary-color;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}
+
+video, audio {
+    display: block;
+    margin: 15px 0;
+    border-radius: 5px;
+    @include card-style;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+#txt {
+    width: 100%;
+    min-height: 100px;
+    margin: 20px 0;
+    padding: 15px;
+    @include card-style;
+    color: $text-color;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+#footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid $primary-color;
+    margin-top: 30px;
+
+    h3 {
+        color: $primary-color;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin: 5px 0;
+        color: $text-color;
+    }
+}
+
+@include responsive(mobile) {
+    #header {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    #menu {
+        flex-direction: column;
+        gap: 10px;
+        
+        a {
+            text-align: center;
+        }
+    }
+    
+    #main {
+        padding: 15px;
+    }
+    
+    #examples, #inProgress, #news {
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
