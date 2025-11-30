@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши проекты - GAMEHOUND</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <h1>GAMEHOUND</h1>
+        <h2>Студия по разработке игр с неугасающим энтузиазмом</h2>
+        <nav>
+            <div id="menu">
+                <a href="index.html">главная</a>
+                <a href="aboutUs.html">о нас</a>
+                <a href="projects.html">наши проекты</a>
+                <a href="contacts.html">контакты</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="projects-section">
+            <h1>Наши игры</h1>
+            <p class="section-subtitle">От инди-хитов до AAA проектов</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="https://via.placeholder.com/400x225/1a1a2e/4fc3f7?text=Silksong" alt="Silksong" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="videos/silksong-trailer.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Silksong</h3>
+                        <span class="project-genre">Metroidvania • Action</span>
+                        <p class="project-description">Продолжение культового Hollow Knight. Играйте за Хорнет в новом приключении по королевству шелков.</p>
+                        <div class="project-status">
+                            <span class="status released">Вышла</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="https://via.placeholder.com/400x225/2e1a2e/ff5722?text=Half-life+3" alt="Half-life 3" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="videos/half-life3-teaser.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Half-life 3</h3>
+                        <span class="project-genre">FPS • Sci-fi</span>
+                        <p class="project-description">Легендарное продолжение серии. Новый движок, инновационный геймплей и эпическая история.</p>
+                        <div class="project-status">
+                            <span class="status in-development">В разработке</span>
+                            <span class="project-year">TBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="https://via.placeholder.com/400x225/1a2e2e/8bc34a?text=Chrono+Shift" alt="Chrono Shift" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="videos/chrono-shift-gameplay.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Chrono Shift</h3>
+                        <span class="project-genre">RPG • Time Travel</span>
+                        <p class="project-description">Игра с механиками управления временем. Меняйте прошлое, чтобы изменить будущее.</p>
+                        <div class="project-status">
+                            <span class="status in-development">В разработке</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="https://via.placeholder.com/400x225/2e2e1a/ffeb3b?text=Neon+Racer" alt="Neon Racer" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="videos/neon-racer.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Neon Racer</h3>
+                        <span class="project-genre">Racing • Arcade</span>
+                        <p class="project-description">Гонки в неоновом стиле 80-х. Кастомные машины, саундтрек в стиле синтвейв.</p>
+                        <div class="project-status">
+                            <span class="status released">Вышла</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <h3>наши контакты</h3>
+        <p>Телефон: +7 (999) 999-99-99</p>
+        <p>Email: gamehound@gmail.com</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const video = card.querySelector('.project-video');
+                const image = card.querySelector('.project-image');
+                
+                card.addEventListener('mouseenter', function() {
+                    image.style.opacity = '0';
+                    video.style.opacity = '1';
+                    video.play();
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    image.style.opacity = '1';
+                    video.style.opacity = '0';
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            });
+
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>
