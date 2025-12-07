@@ -17,6 +17,7 @@
                 <a href="aboutUs.html">о нас</a>
                 <a href="projects.html">наши проекты</a>
                 <a href="contacts.html">контакты</a>
+                <a href="login.html" class="active">вход</a>
             </div>
         </nav>
     </header>
@@ -27,9 +28,7 @@
             <p class="section-subtitle">Мы всегда рады новым идеям и сотрудничеству</p>
             
             <div class="contacts-container">
-                <!-- Карточки контактов -->
                 <div class="contacts-cards">
-                    <!-- Основной офис -->
                     <div class="contact-card">
                         <div class="contact-icon">🏢</div>
                         <h3>Главный офис</h3>
@@ -52,7 +51,6 @@
                         </p>
                     </div>
 
-                    <!-- Техподдержка -->
                     <div class="contact-card">
                         <div class="contact-icon">🎮</div>
                         <h3>Техническая поддержка</h3>
@@ -73,7 +71,6 @@
                         </div>
                     </div>
 
-                    <!-- Бизнес-контакты -->
                     <div class="contact-card">
                         <div class="contact-icon">💼</div>
                         <h3>Сотрудничество</h3>
@@ -95,7 +92,6 @@
                         </p>
                     </div>
 
-                    <!-- Соцсети -->
                     <div class="contact-card">
                         <div class="contact-icon">🌐</div>
                         <h3>Социальные сети</h3>
@@ -112,7 +108,6 @@
                     </div>
                 </div>
 
-                <!-- Карта -->
                 <div class="map-container">
                     <h3>Мы находимся здесь</h3>
                     <div id="map"></div>
@@ -125,7 +120,11 @@
                 </div>
             </div>
 
-            <!-- Форма обратной связи -->
+            <div class="map-section">
+                    <h2>Наши студии</h2>
+                    <div id="map" style="height: 400px; border-radius: 8px;"></div>
+                </div>
+
             <div class="contact-form-container">
                 <h3>Форма обратной связи</h3>
                 <form class="contact-form">
@@ -166,35 +165,14 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Инициализация карты
         document.addEventListener('DOMContentLoaded', function() {
-            // Координаты офиса (Москва)
-            const officeCoords = [55.7558, 37.6173];
             
-            // Создание карты
-            const map = L.map('map').setView(officeCoords, 15);
-            
-            // Добавление слоя карты
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            // Добавление маркера офиса
-            const officeMarker = L.marker(officeCoords).addTo(map);
-            officeMarker.bindPopup(`
-                <strong>GameHound Studio</strong><br>
-                ул. Разработчиков, 15<br>
-                Бизнес-центр "GameDev Plaza"
-            `).openPopup();
-            
-            // Анимация карточек контактов
             const contactCards = document.querySelectorAll('.contact-card');
             contactCards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.1}s`;
                 card.classList.add('fade-in');
             });
 
-            // Обработка формы
             const contactForm = document.querySelector('.contact-form');
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();

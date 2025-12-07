@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - GAMEHOUND</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <h1>GAMEHOUND</h1>
+        <h2>Студия по разработке игр с неугасающим энтузиазмом</h2>
+        <nav>
+            <div id="menu">
+                <a href="index.html">главная</a>
+                <a href="aboutUs.html">о нас</a>
+                <a href="projects.html">наши проекты</a>
+                <a href="contacts.html">контакты</a>
+                <a href="register.html" class="active">регистрация</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="auth-section">
+            <div class="auth-container">
+                <h1>Регистрация</h1>
+                
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                    
+                    <div class="auth-links">
+                        <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+                    </div>
+                </form>
+                
+                <div id="message" class="message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <h3>наши контакты</h3>
+        <p>Телефон: +7 (999) 999-99-99</p>
+        <p>Email: gamehound@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

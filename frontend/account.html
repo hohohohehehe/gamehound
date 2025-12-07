@@ -10,7 +10,6 @@
 </head>
 <body>
     <div id="app">
-        <!-- Хедер остаётся как в index.html -->
         <header id="header">
             <h1>GAMEHOUND</h1>
             <h2>Студия по разработке игр с неугасающим энтузиазмом</h2>
@@ -20,17 +19,15 @@
                     <a href="aboutUs.html">о нас</a>
                     <a href="projects.html">наши проекты</a>
                     <a href="contacts.html">контакты</a>
-                    <a href="#" id="logout-btn">выйти</a>
+                    <a href="login.html" class="active">вход</a>
                 </div>
             </nav>
         </header>
 
         <main id="main">
-            <!-- Дашборд -->
             <section id="dashboard">
                 <h1>Личный кабинет разработчика</h1>
                 
-                <!-- Статистика в графиках -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <canvas id="projectsChart"></canvas>
@@ -40,7 +37,6 @@
                     </div>
                 </div>
 
-                <!-- Таблица проектов -->
                 <div class="projects-section">
                     <h2>Мои проекты</h2>
                     <div class="filters">
@@ -64,18 +60,10 @@
                             </tr>
                         </thead>
                         <tbody id="projectsList">
-                            <!-- Данные загружаются через JS -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Карта с офисами студии -->
-                <div class="map-section">
-                    <h2>Наши студии</h2>
-                    <div id="map" style="height: 400px; border-radius: 8px;"></div>
-                </div>
-
-                <!-- Drag & Drop доска задач -->
                 <div class="task-board">
                     <h2>Доска задач</h2>
                     <div class="board-columns">
@@ -98,7 +86,6 @@
         </main>
 
         <footer id="footer">
-            <!-- Футер как в index.html -->
         </footer>
     </div>
 
