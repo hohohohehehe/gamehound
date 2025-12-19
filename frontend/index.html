@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Gamehound</title>
+    <title>GAMEHOUND - Главная</title>
 </head>
 
 <body>
@@ -15,39 +15,161 @@
         <h2>Студия по разработке игр с неугасающим энтузиазмом</h2>
         <nav>
             <div id="menu">
-                <a href="main.html">главная</a>
+                <a href="main.html" class="active">главная</a>
                 <a href="aboutUs.html">о нас</a>
                 <a href="projects.html">наши проекты</a>
                 <a href="contacts.html">контакты</a>
-                <a href="login.html" class="active">вход</a>
+                <a href="login.html">вход</a>
             </div>
         </nav>
     </header>
+    
     <main id="main">
-        <p>Разрабатываем ваши любимые игры!</p>
-        <examples id="examples">
-            <h1>наши игры</h1>
-            <video controls loop autoplay muted src="img_sources/Hollow Knight_ Silksong - Release Trailer.mp4" width="640"
-                height="360">
-                Ваш браузер не поддерживает видео тег.
-            </video>
-        </examples>
-        <pertnership id="partnership">
-            <h4>Сотрудничаем с компаниями и ищем новые идеи</h4>
-            </partnership>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Разрабатываем ваши любимые игры!</h1>
+                <p class="hero-subtitle">От концепции до релиза: создаем незабываемые игровые миры</p>
+                <a href="projects.html" class="hero-btn">Смотреть проекты</a>
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <div class="video-container">
+                <video controls autoplay muted loop poster="img_sources/Hollow_Knight_Silksong_cover.jpg">
+                    <source src="img_sources/Hollow Knight_ Silksong - Release Trailer.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="section-header">
+                <h1>Новости студии</h1>
+                <p class="section-subtitle">Будьте в курсе всех событий GAMEHOUND</p>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="img_sources/news1.webp" alt="Silksong выходит на консолях">
+                        <span class="news-date">15.12.2024</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Silksong выходит на консолях!</h3>
+                        <p class="news-excerpt">Мы рады объявить о релизе Hollow Knight: Silksong на PlayStation 5, Xbox Series X и Nintendo Switch.</p>
+                        <div class="news-meta">
+                            <span class="news-tag">Анонс</span>
+                            <a href="#" class="news-readmore">Читать далее →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Новость 4 -->
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="img_sources/news2.jpg" alt="Набор в команду">
+                        <span class="news-date">01.12.2024</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Ищем талантливых разработчиков</h3>
+                        <p class="news-excerpt">Открыты вакансии для геймдизайнеров, программистов и художников.</p>
+                        <div class="news-meta">
+                            <span class="news-tag">Вакансии</span>
+                            <a href="#" class="news-readmore">Читать далее →</a>
+                        </div>
+                    </div>
+                </article>
+
+            <div class="news-actions">
+                <a href="#" class="btn-outline">Все новости</a>
+            </div>
+        </section>
+
+        <!-- Секция партнерства -->
+        <section class="partnership-section">
+            <div class="partnership-content">
+                <h2>Сотрудничаем с компаниями и ищем новые идеи</h2>
+                <p>Мы открыты для партнерства с издателями, инвесторами и творческими коллективами</p>
+                <div class="partnership-buttons">
+                    <a href="contacts.html#partnership" class="btn-primary">Стать партнером</a>
+                    <a href="contacts.html#support" class="btn-secondary">Предложить идею</a>
+                </div>
+            </div>
+        </section>
     </main>
+    
     <footer id="footer">
-        <h3>наши контакты</h3>
-        <p>Телефон: +7 (999) 999-99-99</p>
-        <p>Email: gamehound@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Наши контакты</h3>
+                <p>Телефон: +7 (999) 999-99-99</p>
+                <p>Email: gamehound@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Быстрые ссылки</h3>
+                <a href="projects.html">Проекты</a>
+                <a href="aboutUs.html">Команда</a>
+                <a href="contacts.html">Свяжитесь с нами</a>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#">VK</a>
+                    <a href="#">TG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GAMEHOUND. Все права защищены.</p>
+        </div>
     </footer>
 
     <script>
-        const textarea = document.getElementById('txt');
-        textarea.value = localStorage.getItem('text') || '';
+        // Анимация новостных карточек
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация появления карточек
+            const newsCards = document.querySelectorAll('.news-card');
+            newsCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
 
-        textarea.addEventListener('input', function () {
-            localStorage.setItem('text', this.value);
+            // Анимация статистики
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.round(current) + (stat.textContent.includes('+') ? '+' : '');
+                }, 30);
+            });
+
+            // Сохранение данных в textarea (если она есть на странице)
+            const textarea = document.getElementById('txt');
+            if (textarea) {
+                textarea.value = localStorage.getItem('text') || '';
+                textarea.addEventListener('input', function () {
+                    localStorage.setItem('text', this.value);
+                });
+            }
+
+            // Клик по новостной карточке
+            newsCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('news-readmore')) {
+                        const title = this.querySelector('h3').textContent;
+                        console.log(`Открываем новость: ${title}`);
+                        // Здесь можно добавить открытие модального окна с полной новостью
+                    }
+                });
+            });
         });
     </script>
 </body>

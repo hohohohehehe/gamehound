@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - GAMEHOUND</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <header id="header">
@@ -16,8 +16,8 @@
                 <a href="index.html">главная</a>
                 <a href="aboutUs.html">о нас</a>
                 <a href="projects.html">наши проекты</a>
-                <a href="contacts.html">контакты</a>
-                <a href="login.html" class="active">вход</a>
+                <a href="contacts.html" class="active">контакты</a>
+                <a href="login.html">вход</a>
             </div>
         </nav>
     </header>
@@ -27,11 +27,21 @@
             <h1>Свяжитесь с нами</h1>
             <p class="section-subtitle">Мы всегда рады новым идеям и сотрудничеству</p>
             
-            <div class="contacts-container">
-                <div class="contacts-cards">
-                    <div class="contact-card">
-                        <div class="contact-icon">🏢</div>
-                        <h3>Главный офис</h3>
+            <div class="map-section">
+                <div id="contacts-map" style="height: 400px; border-radius: 8px; margin-bottom: 20px;"></div>
+                <div class="map-info">
+                    <p><strong>Как добраться:</strong></p>
+                    <p>🚇 Метро "Разработческая" (5 мин пешком)</p>
+                    <p>🚌 Автобусы: 123, 456, 789</p>
+                    <p>🚗 Парковка у бизнес-центра</p>
+                </div>
+            </div>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>Главный офис</h3>
+                    <div class="contact-details">
                         <p class="contact-info">
                             <strong>Адрес:</strong><br>
                             Москва, ул. Разработчиков, 15<br>
@@ -50,10 +60,12 @@
                             Пн-Пт: 9:00-18:00
                         </p>
                     </div>
+                </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">🎮</div>
-                        <h3>Техническая поддержка</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">🎮</div>
+                    <h3>Техническая поддержка</h3>
+                    <div class="contact-details">
                         <p class="contact-info">
                             <strong>Для игроков:</strong><br>
                             support@gamehound.ru
@@ -70,10 +82,12 @@
                             <span class="status-online">● Онлайн</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">💼</div>
-                        <h3>Сотрудничество</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>Сотрудничество</h3>
+                    <div class="contact-details">
                         <p class="contact-info">
                             <strong>Партнерства:</strong><br>
                             partners@gamehound.ru
@@ -91,10 +105,12 @@
                             investors@gamehound.ru
                         </p>
                     </div>
+                </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">🌐</div>
-                        <h3>Социальные сети</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Социальные сети</h3>
+                    <div class="contact-details">
                         <div class="social-links">
                             <a href="#" class="social-link">VK</a>
                             <a href="#" class="social-link">Telegram</a>
@@ -107,23 +123,7 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="map-container">
-                    <h3>Мы находимся здесь</h3>
-                    <div id="map"></div>
-                    <div class="map-info">
-                        <p><strong>Как добраться:</strong></p>
-                        <p>🚇 Метро "Разработческая" (5 мин пешком)</p>
-                        <p>🚌 Автобусы: 123, 456, 789</p>
-                        <p>🚗 Парковка у бизнес-центра</p>
-                    </div>
-                </div>
             </div>
-
-            <div class="map-section">
-                    <h2>Наши студии</h2>
-                    <div id="map" style="height: 400px; border-radius: 8px;"></div>
-                </div>
 
             <div class="contact-form-container">
                 <h3>Форма обратной связи</h3>
@@ -158,26 +158,120 @@
     </main>
 
     <footer id="footer">
-        <h3>наши контакты</h3>
-        <p>Телефон: +7 (999) 999-99-99</p>
-        <p>Email: gamehound@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Наши контакты</h3>
+                <p>Телефон: +7 (999) 999-99-99</p>
+                <p>Email: gamehound@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Быстрые ссылки</h3>
+                <a href="projects.html">Проекты</a>
+                <a href="aboutUs.html">Команда</a>
+                <a href="contacts.html">Свяжитесь с нами</a>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#">VK</a>
+                    <a href="#">TG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GAMEHOUND. Все права защищены.</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация карты
+            const map = L.map('contacts-map').setView([55.7558, 37.6173], 15);
             
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Метки офисов
+            const offices = [
+                {
+                    coords: [55.7558, 37.6173],
+                    title: "Главный офис GAMEHOUND",
+                    address: "Москва, ул. Разработчиков, 15<br>Бизнес-центр 'GameDev Plaza'",
+                    phone: "+7 (495) 123-45-67",
+                    email: "office@gamehound.ru"
+                },
+                {
+                    coords: [55.7517, 37.6178],
+                    title: "Студия дизайна", 
+                    address: "Москва, ул. Креативная, 8",
+                    phone: "+7 (495) 123-45-68",
+                    email: "design@gamehound.ru"
+                },
+                {
+                    coords: [55.7597, 37.6192],
+                    title: "Технический отдел",
+                    address: "Москва, пр. Инноваций, 25",
+                    phone: "+7 (495) 123-45-69",
+                    email: "tech@gamehound.ru"
+                }
+            ];
+
+            offices.forEach(office => {
+                const marker = L.marker(office.coords).addTo(map);
+                marker.bindPopup(`
+                    <div style="color: #1a1a2e;">
+                        <strong style="color: #ff5722;">${office.title}</strong><br>
+                        <strong>Адрес:</strong> ${office.address}<br>
+                        <strong>Телефон:</strong> ${office.phone}<br>
+                        <strong>Email:</strong> ${office.email}
+                    </div>
+                `);
+            });
+
+            // Анимация карточек
             const contactCards = document.querySelectorAll('.contact-card');
             contactCards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.1}s`;
                 card.classList.add('fade-in');
             });
 
+            // Обработка формы
             const contactForm = document.querySelector('.contact-form');
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
+                
+                // Валидация формы
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !message) {
+                    alert('Пожалуйста, заполните все обязательные поля');
+                    return;
+                }
+                
+                // Здесь можно добавить отправку данных на сервер
                 alert('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
                 contactForm.reset();
+            });
+
+            // Добавляем интерактивность для карточек
+            contactCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.querySelector('h3').textContent;
+                    const details = this.querySelectorAll('.contact-info');
+                    
+                    let info = '';
+                    details.forEach(detail => {
+                        info += detail.textContent + '\n';
+                    });
+                    
+                    // Можно добавить всплывающее окно с подробной информацией
+                    console.log(`${title}:\n${info}`);
+                });
             });
         });
     </script>

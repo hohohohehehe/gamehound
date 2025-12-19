@@ -47,10 +47,14 @@
 
                 <div class="project-card">
                     <div class="project-media">
-                        <img src="img_sources/692ed73e9e7d2694204712.jpg" alt="Half-life 3" class="project-image">
+                        <img src="img_sources/dishonored.jpg" alt="Half-life 3" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="img_sources/Dishonored - Cinematic Trailer.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
                     </div>
                     <div class="project-info">
-                        <h3>Half-life 3</h3>
+                        <h3>Dishonored</h3>
                         <span class="project-genre">FPS • Sci-fi</span>
                         <p class="project-description">Легендарное продолжение серии. Новый движок, инновационный геймплей и эпическая история.</p>
                         <div class="project-status">
@@ -62,12 +66,14 @@
 
                 <div class="project-card">
                     <div class="project-media">
-                        <img src="img_sources/header.jpg" alt="Chrono Shift" class="project-image">
+                        <img src="img_sources/skyrim_cover.jpg" alt="Chrono Shift" class="project-image">
+                        <video class="project-video" muted loop>
+                            <source src="img_sources/The Elder Scrolls V Skyrim - Official Trailer [RU Subs].mp4" type="video/mp4">
                             Ваш браузер не поддерживает видео.
                         </video>
                     </div>
                     <div class="project-info">
-                        <h3>Chrono Shift</h3>
+                        <h3>Skyrim</h3>
                         <span class="project-genre">RPG • Time Travel</span>
                         <p class="project-description">Игра с механиками управления временем. Меняйте прошлое, чтобы изменить будущее.</p>
                         <div class="project-status">
@@ -76,41 +82,46 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-media">
-                        <img src="img_sources/header (1).jpg" alt="Neon Racer" class="project-image">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                    <div class="project-info">
-                        <h3>Neon Racer</h3>
-                        <span class="project-genre">Racing • Arcade</span>
-                        <p class="project-description">Гонки в неоновом стиле 80-х. Кастомные машины, саундтрек в стиле синтвейв.</p>
-                        <div class="project-status">
-                            <span class="status released">Вышла</span>
-                            <span class="project-year">2023</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
 
     <footer id="footer">
-        <h3>наши контакты</h3>
-        <p>Телефон: +7 (999) 999-99-99</p>
-        <p>Email: gamehound@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Наши контакты</h3>
+                <p>Телефон: +7 (999) 999-99-99</p>
+                <p>Email: gamehound@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Быстрые ссылки</h3>
+                <a href="projects.html">Проекты</a>
+                <a href="aboutUs.html">Команда</a>
+                <a href="contacts.html">Свяжитесь с нами</a>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#">VK</a>
+                    <a href="#">TG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GAMEHOUND. Все права защищены.</p>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectCards = document.querySelectorAll('.project-card');
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            const video = card.querySelector('.project-video');
+            const image = card.querySelector('.project-image');
             
-            projectCards.forEach(card => {
-                const video = card.querySelector('.project-video');
-                const image = card.querySelector('.project-image');
-                
+            if (video && image) {
                 card.addEventListener('mouseenter', function() {
                     image.style.opacity = '0';
                     video.style.opacity = '1';
@@ -123,13 +134,28 @@
                     video.pause();
                     video.currentTime = 0;
                 });
-            });
+            }
 
-            projectCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('fade-in');
+            // Добавляем клик для перехода на страницу проекта
+            card.addEventListener('click', function(e) {
+                // Проверяем, не кликнули ли на внутренний элемент
+                if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                    return;
+                }
+                
+                const projectTitle = card.querySelector('h3').textContent;
+                const projectId = projectTitle.toLowerCase().replace(/\s+/g, '-');
+                
+                // Переходим на страницу проекта
+                window.location.href = `project-${projectId}.html`;
             });
         });
-    </script>
+
+        projectCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add('fade-in');
+        });
+    });
+</script>
 </body>
 </html>
